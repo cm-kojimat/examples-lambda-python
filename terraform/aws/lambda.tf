@@ -50,7 +50,7 @@ resource aws_lambda_function example_lambda_python {
   filename = data.archive_file.src.output_path
 
   function_name = "example_lambda_python"
-  handler       = "index.py"
+  handler       = "example_lambda_python.index.handler"
   runtime       = "python3.8"
   role          = aws_iam_role.example_lambda_python.arn
 
