@@ -49,10 +49,12 @@ data archive_file src {
 resource aws_lambda_function examples_lambda_python {
   filename = data.archive_file.src.output_path
 
-  function_name = "examples_lambda_python"
-  handler       = "examples_lambda_python.index.handler"
+  function_name = "examples_lambda_python_func"
+  handler       = "examples_lambda_python/index.handler"
   runtime       = "python3.8"
   role          = aws_iam_role.examples_lambda_python.arn
+
+  source_code_hash = data.archive_file.src.output_base64sha256
 
   layers = [
     aws_lambda_layer_version.examples_lambda_python.id,

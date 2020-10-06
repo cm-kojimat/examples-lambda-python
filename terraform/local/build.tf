@@ -13,7 +13,7 @@ resource docker_container examples_lambda_python {
     "-r",
     "requirements.txt",
     "-t",
-    "/var/task/layer"
+    "/var/task/layer/python"
   ]
 
   volumes {
@@ -22,7 +22,7 @@ resource docker_container examples_lambda_python {
   }
 
   volumes {
-    host_path      = abspath("${path.module}/layer/")
-    container_path = "/var/task/layer/"
+    host_path      = abspath("${path.module}/layer/python/")
+    container_path = "/var/task/layer/python/"
   }
 }
