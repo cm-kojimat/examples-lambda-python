@@ -16,6 +16,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 # terraform build && terraform deploy
 
 ```
+export AWS_DEFAULT_REGION=ap-northeast-1
 TF_WORKSPACE=local terraform apply terraform/local
 TF_WORKSPACE=aws   terraform apply terraform/aws
 ```
