@@ -3,7 +3,7 @@ resource random_string container_name {
   special = false
 }
 
-resource docker_container example_lambda_python {
+resource docker_container examples_lambda_python {
   image = "lambci/lambda:build-python3.8"
   name  = random_string.container_name.result
 
